@@ -1,13 +1,13 @@
 export const HabitTable = (props) => {
   const HabitTable = props.HabitData.map((habit) => (
-    <div key={habit.habitID}>
+    <div key={habit.id}>
       <h1>{habit.habitName}</h1>
       <h3>{habit.habitStart}</h3>
       <div style={{ display: "flex" }}>
         {habit.habitTracker.map((habitTrackerSquare, index) => (
           <div
             onClick={() => {
-              props.handleClick(habit.habitID, index);
+              props.handleClick(habit.id, index);
             }}
             style={{
               border: "1px solid black",
@@ -18,8 +18,7 @@ export const HabitTable = (props) => {
             }}
             key={index}
           >
-            {habitTrackerSquare.date.getMonth() + 1}/
-            {habitTrackerSquare.date.getDate()}
+            {habitTrackerSquare.date}
           </div>
         ))}
       </div>
@@ -27,14 +26,3 @@ export const HabitTable = (props) => {
   ));
   return <div>{HabitTable}</div>;
 };
-
-/* 
-      {HabitData.map((habit) => (
-        <div key={habit.habitID}>
-          <h1>{habit.habitName}</h1>
-          <h3>{habit.habitStart}</h3>
-          {habit.habitTracker.map((habitTrackerSquare, index) => (
-            <li key={index}>{habitTrackerSquare}</li>
-          ))}
-        </div>
-      ))}*/
