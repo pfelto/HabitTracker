@@ -2,7 +2,7 @@
 
 Here's an image of the app on 1/17/2022
 
-![Habit Tracker App](app01172022.PNG)
+![Habit Tracker App](https://github.com/pfelto/HabitTracker/blob/main/public/app01172022.PNG)
 
 Move along.
 
