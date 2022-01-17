@@ -1,5 +1,11 @@
 # Basic Habit Tracking App
 
+Here's an image of the app on 1/17/2022
+
+![Habit Tracker App](app01172022.PNG)
+
+Move along.
+
 <details>
 <summary>Getting Started with Create React App</summary>
 
