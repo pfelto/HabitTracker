@@ -7,8 +7,6 @@ import { TextInput } from "./HabitForm/TextInput";
 let TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
-//const currentID = 3; this will be the id that is in the last spot of the habits array, so grab this after loaded or else 1
-
 const CellColors = {
   checked: "green",
   wrong: "red",
@@ -18,22 +16,39 @@ const CellColors = {
 function App() {
   const [habitInput, setHabitInput] = useState("");
   const [habitData, setHabitData] = useState([]);
-  const [error, setError] = useState(null);
+  const [myError, setMyError] = useState(null);
+  const [status, setStatus] = useState("idle");
 
   const inputEmpty = habitInput === "";
 
   useEffect(() => {
     let _isMounted = true;
-    fetch("http://localhost:3001/habits")
-      .then((res) => res.json())
-      .then(
-        (data) => {
-          if (_isMounted) setHabitData(data);
-        },
-        (error) => {
-          if (_isMounted) setError(error);
+    setStatus("pending");
+    fetch(`http://localhost:3001/habits`)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          if (_isMounted) {
+            const Error400 = new Error("4** Error while loading");
+            setMyError(Error400);
+            setStatus("rejected");
+            throw Error400;
+          }
         }
-      );
+      })
+      .then((data) => {
+        if (_isMounted) {
+          setHabitData(data);
+          setStatus("resolved");
+        }
+      })
+      .catch((error) => {
+        if (_isMounted) {
+          setMyError(error);
+          setStatus("rejected");
+        }
+      });
     if (_isMounted)
       return () => {
         _isMounted = false;
@@ -77,7 +92,8 @@ function App() {
         }),
     };
     console.log(newHabit);
-    setHabitData([...habitData, newHabit]);
+    //setHabitData([...habitData, newHabit]);
+    setStatus("pending");
     fetch(`http://localhost:3001/habits`, {
       method: "POST",
       headers: {
@@ -85,12 +101,23 @@ function App() {
       },
       body: JSON.stringify(newHabit),
     })
-      .then((response) => response.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          const Error400 = new Error("4** Error while adding");
+          setMyError(Error400);
+          setStatus("rejected");
+          throw Error400;
+        }
+      })
       .then((data) => {
-        console.log("Success:", data);
+        setHabitData([...habitData, newHabit]);
+        setStatus("resolved");
       })
       .catch((error) => {
-        console.error("Error:", error);
+        setMyError(error);
+        setStatus("rejected");
       });
     setHabitInput("");
   }
@@ -98,17 +125,29 @@ function App() {
   //need to have a delete function here that does fetch Delete to "http://localhost:3001/habits/id"
   function removeHabit(habitId) {
     console.log(habitId);
+    //habitId = 10000000;
     const removedHabits = habitData.filter((habit) => habit.id !== habitId);
-    setHabitData(removedHabits);
+    setStatus("pending");
     fetch(`http://localhost:3001/habits/${habitId}`, {
       method: "DELETE",
     })
-      .then((res) => res.json()) // or res.json()
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          const Error400 = new Error("4** Error when deleting");
+          setMyError(Error400);
+          setStatus("rejected");
+          throw Error400;
+        }
+      })
       .then((data) => {
-        console.log("Success:", data);
+        setHabitData(removedHabits);
+        setStatus("resolved");
       })
       .catch((error) => {
-        console.error("Error:", error);
+        setMyError(error);
+        setStatus("rejected");
       });
   }
 
@@ -127,7 +166,8 @@ function App() {
       }
       return habit;
     });
-    setHabitData(updatedHabitData);
+    //setHabitData(updatedHabitData);
+    setStatus("pending");
     fetch(`http://localhost:3001/habits/${habitId}`, {
       method: "PUT",
       headers: {
@@ -135,12 +175,23 @@ function App() {
       },
       body: JSON.stringify(object),
     })
-      .then((response) => response.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          const Error400 = new Error("4** Error when updating");
+          setMyError(Error400);
+          setStatus("rejected");
+          throw Error400;
+        }
+      })
       .then((data) => {
-        console.log("Success:", data);
+        setHabitData(updatedHabitData);
+        setStatus("resolved");
       })
       .catch((error) => {
-        console.error("Error:", error);
+        setMyError(error);
+        setStatus("rejected");
       });
   }
 
@@ -152,6 +203,31 @@ function App() {
   }
 
   //Put something to catch error here
+  if (status === "rejected")
+    return (
+      <div className="App">
+        <HabitForm clickSubmit={handleSubmit}>
+          <TextInput habitInput={habitInput} handleChange={changeInput} />
+          <SubmitButton inputEmpty={inputEmpty} />
+        </HabitForm>
+        <div>
+          <h1>{myError.message}</h1>
+        </div>
+      </div>
+    );
+
+  if (status === "pending")
+    return (
+      <div className="App">
+        <HabitForm clickSubmit={handleSubmit}>
+          <TextInput habitInput={habitInput} handleChange={changeInput} />
+          <SubmitButton inputEmpty={inputEmpty} />
+        </HabitForm>
+        <div>
+          <h1>Loading...</h1>
+        </div>
+      </div>
+    );
 
   return (
     <div className="App">
