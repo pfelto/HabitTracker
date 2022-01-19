@@ -7,6 +7,25 @@ Here's an image of the app on 1/17/2022
 Move along.
 
 <details>
+<summary> Lessons Learned for Project 1 of #100DaysOfCode</summary>
+
+1. Might be best to follow development process that Sumer Buna laid out in his PluralSight class starting out. I think it is very helpful to get the styles and html in place first and then work from there separating components, thinking about state, UI logic, APP Logic, creating/cleaning side effects, extracting logic, etc.
+
+2. When you are loading something from an API it makes more sense to use useReducer over useState as you will most likely be setting 2 or 3 things at a time (status, data and error)
+
+3. Need to spend more time on how/what is needed for state and what will go inside custom hooks. This one I basically just shifted all the computational code out of the react component into a custom react hook that I cannot use for anything else
+
+   - Would be nice to be able to reuse a custom Hook for getting data from an API as I will be doing this a lot in future projects (pagination of rick and morty API, fetch and cache API results)
+
+4. CSS styling is hard to do well! I think I should pick using inline styles mostly or classic CSS stylesheets. This was sort of a mixed bag.
+
+5. Benefits of sitting down and coding 1hr+ a day is huge. I got to put a lot of programming skills I have been learning about in practice and work on something over multiple days and hours let me think of better ways to do things, new features to add and much more.
+
+6. Prop drilling can become a real pain. Look into using composition or context more.
+
+</details>
+
+<details>
 <summary>Getting Started with Create React App</summary>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

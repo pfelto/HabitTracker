@@ -17,27 +17,11 @@ function App() {
     cellStatus,
     changeHabitChecked,
     removeHabit,
+    streak,
+    habitTrackerDisabled,
   } = useDataApi();
 
   const inputEmpty = habitInput === "";
-
-  const streak = (habit) => {
-    const habitStreak = habit.habitTracker;
-
-    const indexOfToday = habitStreak.findIndex((element) => {
-      const dateInElement = new Date(element.date);
-      return dateInElement.getTime() === getToday().getTime();
-    });
-
-    if (indexOfToday < 3) return "black";
-    if (
-      habitStreak[indexOfToday - 1].checked === true &&
-      habitStreak[indexOfToday - 2].checked === true &&
-      habitStreak[indexOfToday - 3].checked === true
-    )
-      return "green";
-    else return "red";
-  };
 
   //Put something to catch error here
   if (status === "rejected")
@@ -81,6 +65,7 @@ function App() {
           handleClick={changeHabitChecked}
           handleRemove={removeHabit}
           streak={streak}
+          disabledTracker={habitTrackerDisabled}
         />
       </section>
     </div>

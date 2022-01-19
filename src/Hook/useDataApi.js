@@ -189,6 +189,30 @@ export function useDataApi() {
     return CellColors.available;
   }
 
+  const streak = (habit) => {
+    const habitStreak = habit.habitTracker;
+
+    const indexOfToday = habitStreak.findIndex((element) => {
+      const dateInElement = new Date(element.date);
+      return dateInElement.getTime() === getToday().getTime();
+    });
+
+    if (indexOfToday < 3) return "black";
+    if (
+      habitStreak[indexOfToday - 1].checked === true &&
+      habitStreak[indexOfToday - 2].checked === true &&
+      habitStreak[indexOfToday - 3].checked === true
+    )
+      return "green";
+    else return "red";
+  };
+
+  const habitTrackerDisabled = (ArrayObject) => {
+    const trackerDate = new Date(ArrayObject.date);
+    if (trackerDate.getTime() > getToday().getTime()) return true;
+    return false;
+  };
+
   const retObject = {
     status,
     handleSubmit,
@@ -199,6 +223,8 @@ export function useDataApi() {
     cellStatus,
     changeHabitChecked,
     removeHabit,
+    streak,
+    habitTrackerDisabled,
   };
   return retObject;
 }

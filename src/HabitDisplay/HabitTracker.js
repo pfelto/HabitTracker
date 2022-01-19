@@ -1,6 +1,6 @@
 export const HabitTracker = (props) => {
   return (
-    <div
+    <button
       onClick={() => {
         props.handleClick(props.id, props.index);
       }}
@@ -10,9 +10,11 @@ export const HabitTracker = (props) => {
         margin: "2px",
         cursor: "pointer",
         background: props.status(props.habitTrackerSquare),
+        fontWeight: "bolder",
       }}
+      disabled={props.disabledTracker(props.habitTrackerSquare)}
     >
       {props.habitTrackerSquare.date}
-    </div>
+    </button>
   );
 };

@@ -10,6 +10,7 @@ export const Habit = (props) => {
         habitTrackerSquare={habitTrackerSquare}
         handleClick={props.handleClick}
         status={props.status}
+        disabledTracker={props.disabledTracker}
       />
     )
   );

@@ -8,6 +8,7 @@ export const HabitTable = (props) => {
       handleClick={props.handleClick}
       handleRemove={props.handleRemove}
       streak={props.streak}
+      disabledTracker={props.disabledTracker}
       key={habit.id}
     />
   ));
