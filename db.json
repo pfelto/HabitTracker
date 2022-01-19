@@ -14,6 +14,125 @@
           "date": "1/18/2022"
         },
         {
+          "checked": true,
+          "date": "1/19/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/20/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/21/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/22/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/23/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/24/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/25/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/26/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/27/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/28/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/29/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/30/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/31/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/1/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/2/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/3/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/4/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/5/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/6/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/7/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/8/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/9/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/10/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/11/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/12/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/13/2022"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "habitName": "Stretch for 15m daily at 6am",
+      "habitStart": "1/17/2022",
+      "habitTracker": [
+        {
+          "checked": false,
+          "date": "1/17/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/18/2022"
+        },
+        {
           "checked": false,
           "date": "1/19/2022"
         },
@@ -116,30 +235,14 @@
         {
           "checked": false,
           "date": "2/13/2022"
-        },
-        {
-          "checked": false,
-          "date": "2/14/2022"
-        },
-        {
-          "checked": false,
-          "date": "2/15/2022"
         }
       ]
     },
     {
-      "id": 2,
-      "habitName": "Stretch for 15m daily at 6am",
-      "habitStart": "1/17/2022",
+      "id": 3,
+      "habitName": "Watch 1h of PluralSight videos daily at 9:30am",
+      "habitStart": "1/19/2022",
       "habitTracker": [
-        {
-          "checked": false,
-          "date": "1/17/2022"
-        },
-        {
-          "checked": false,
-          "date": "1/18/2022"
-        },
         {
           "checked": false,
           "date": "1/19/2022"
