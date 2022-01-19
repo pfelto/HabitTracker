@@ -67,7 +67,7 @@ form {
 .Habit {
   display: flex;
   background-color: var(--lavendar);
-  border: 1px solid black;
+  border: 2px solid black;
   margin: 4px;
   padding: 10px;
   border-radius: var(--border-radius-curves);

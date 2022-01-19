@@ -7,6 +7,7 @@ export const HabitTable = (props) => {
       status={props.status}
       handleClick={props.handleClick}
       handleRemove={props.handleRemove}
+      streak={props.streak}
       key={habit.id}
     />
   ));

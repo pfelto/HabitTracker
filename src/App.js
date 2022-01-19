@@ -4,6 +4,7 @@ import { HabitForm } from "./HabitForm/HabitForm";
 import { SubmitButton } from "./HabitForm/SubmitButton";
 import { TextInput } from "./HabitForm/TextInput";
 import { useDataApi } from "./Hook/useDataApi";
+import { getToday } from "./utils/today";
 
 function App() {
   const {
@@ -19,6 +20,24 @@ function App() {
   } = useDataApi();
 
   const inputEmpty = habitInput === "";
+
+  const streak = (habit) => {
+    const habitStreak = habit.habitTracker;
+
+    const indexOfToday = habitStreak.findIndex((element) => {
+      const dateInElement = new Date(element.date);
+      return dateInElement.getTime() === getToday().getTime();
+    });
+
+    if (indexOfToday < 3) return "black";
+    if (
+      habitStreak[indexOfToday - 1].checked === true &&
+      habitStreak[indexOfToday - 2].checked === true &&
+      habitStreak[indexOfToday - 3].checked === true
+    )
+      return "green";
+    else return "red";
+  };
 
   //Put something to catch error here
   if (status === "rejected")
@@ -61,6 +80,7 @@ function App() {
           status={cellStatus}
           handleClick={changeHabitChecked}
           handleRemove={removeHabit}
+          streak={streak}
         />
       </section>
     </div>

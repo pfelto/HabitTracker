@@ -15,7 +15,7 @@ export const Habit = (props) => {
   );
 
   return (
-    <div className="Habit">
+    <div className="Habit" style={{ borderColor: props.streak(props.habit) }}>
       <div style={{ flex: 5 }}>
         <h1>{props.habit.habitName}</h1>
         <h3>{props.habit.habitStart}</h3>
