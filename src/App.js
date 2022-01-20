@@ -4,7 +4,6 @@ import { HabitForm } from "./HabitForm/HabitForm";
 import { SubmitButton } from "./HabitForm/SubmitButton";
 import { TextInput } from "./HabitForm/TextInput";
 import { useDataApi } from "./Hook/useDataApi";
-import { getToday } from "./utils/today";
 
 function App() {
   const {

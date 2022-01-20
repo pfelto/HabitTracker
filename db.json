@@ -18,7 +18,7 @@
           "date": "1/19/2022"
         },
         {
-          "checked": false,
+          "checked": true,
           "date": "1/20/2022"
         },
         {
@@ -137,7 +137,7 @@
           "date": "1/19/2022"
         },
         {
-          "checked": false,
+          "checked": true,
           "date": "1/20/2022"
         },
         {
@@ -244,7 +244,7 @@
       "habitStart": "1/19/2022",
       "habitTracker": [
         {
-          "checked": true,
+          "checked": false,
           "date": "1/19/2022"
         },
         {
@@ -354,6 +354,125 @@
         {
           "checked": false,
           "date": "2/15/2022"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "habitName": "Walk for at least 15m x2 daily at 9am and 4pm",
+      "habitStart": "1/20/2022",
+      "habitTracker": [
+        {
+          "checked": false,
+          "date": "1/20/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/21/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/22/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/23/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/24/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/25/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/26/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/27/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/28/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/29/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/30/2022"
+        },
+        {
+          "checked": false,
+          "date": "1/31/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/1/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/2/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/3/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/4/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/5/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/6/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/7/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/8/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/9/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/10/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/11/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/12/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/13/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/14/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/15/2022"
+        },
+        {
+          "checked": false,
+          "date": "2/16/2022"
         }
       ]
     }

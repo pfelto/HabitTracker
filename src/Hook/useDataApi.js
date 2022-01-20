@@ -197,7 +197,8 @@ export function useDataApi() {
       return dateInElement.getTime() === getToday().getTime();
     });
 
-    if (indexOfToday < 3) return "black";
+    if (indexOfToday === -1) return "black";
+    if (indexOfToday < 3) return "lavendar";
     if (
       habitStreak[indexOfToday - 1].checked === true &&
       habitStreak[indexOfToday - 2].checked === true &&

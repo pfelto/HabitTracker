@@ -6,8 +6,7 @@ export const HabitTracker = (props) => {
       }}
       style={{
         border: "1px solid black",
-        padding: "5px",
-        margin: "2px",
+        margin: "1px",
         cursor: "pointer",
         background: props.status(props.habitTrackerSquare),
         fontWeight: "bolder",

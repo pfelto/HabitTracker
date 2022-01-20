@@ -67,8 +67,14 @@ form {
 .Habit {
   display: flex;
   background-color: var(--lavendar);
-  border: 2px solid black;
+  border: 3px solid lavender;
   margin: 4px;
   padding: 10px;
   border-radius: var(--border-radius-curves);
+}
+
+@media only screen and (max-width: 600px) {
+  .HabitTable {
+    grid-template-columns: repeat(4, minmax(75px, 1fr));
+  }
 }
