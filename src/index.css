@@ -25,6 +25,7 @@ code {
   padding: 10px;
   width: calc(100vw - 40px);
   background-color: var(--light-gray);
+  min-height: 100vh;
 }
 
 .header {

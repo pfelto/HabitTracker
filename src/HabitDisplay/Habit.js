@@ -20,7 +20,6 @@ export const Habit = (props) => {
       <div style={{ flex: 5 }}>
         <h1>{props.habit.habitName}</h1>
         <h3>{props.habit.habitStart}</h3>
-        <p>{props.habit.id}</p>
         <div className="HabitTable">{HabitTrackerTable}</div>
       </div>
       <button
